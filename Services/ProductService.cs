@@ -3,7 +3,6 @@ using DataAccess;
 using DataAccess.Entites;
 using DTO;
 using Microsoft.EntityFrameworkCore;
-//using Npgsql.EntityFrameworkCore.PostgreSQL.Metadata;
 using Services.Abstract;
 using System;
 using System.Collections.Generic;
