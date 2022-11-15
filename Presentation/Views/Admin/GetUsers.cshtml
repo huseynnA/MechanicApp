@@ -1,0 +1,33 @@
+﻿admin
+@using DTO
+@model PagedResponseDTO<UserDTO>
+
+
+
+    @{
+    Layout = "_Layout";
+}
+    
+    <div class="row justify-content-md-center">
+        <div class="col col-md-auto">
+            <ul class="list-group bg-white list-group-horizontal">
+            <li class="list-group-item list-group-item-secondary">
+                <a class="text-decoration-none" asp-action="GetUsers" asp-route-order="@ViewBag.NameSort">Name</a>
+            </li>
+            </ul>
+        </div>
+    </div>
+<table class="row mt-1 mb-2">
+
+    @{
+        foreach (var item in Model.Values)
+        {
+            <ul>Username:
+            <li>@item.Username</li>
+            </ul>
+        }
+
+
+    }
+
+</table>

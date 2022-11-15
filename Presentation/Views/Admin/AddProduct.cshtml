@@ -1,0 +1,29 @@
+﻿
+@{
+	Layout="_Layout";
+}
+
+<form method="post">
+
+  <div class="form-outline mb-4">
+                                <input type="text" placeholder="Name" class="form-control form-control-lg" name="Name" />
+                            </div>
+
+                            <div class="form-outline mb-4">
+                                <input type="text" placeholder="Price" class="form-control form-control-lg" name="Price" />
+                            </div>
+
+                              <div class="form-outline mb-4">
+                                <input type="text" placeholder="ImgPath" class="form-control form-control-lg" name="ImgPath" />
+                            </div>
+
+                                                          <div class="form-outline mb-4">
+                                <input type="text" placeholder="Note" class="form-control form-control-lg" name="Note" />
+                            </div>
+
+                              <button class="btn btn-primary btn-lg btn-block mb-4" type="submit"
+                                    asp-controller="Admin" asp-action="AddProduct">
+                                Create
+                            </button>
+
+</form>
