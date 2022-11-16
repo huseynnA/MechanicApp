@@ -27,7 +27,7 @@
         {
 
                     <div class="col-3 my-4" >
-                        <a style="text-decoration:none" class="" asp-controller="Product" asp-action="Get" asp-route-id=@item.Id>
+                        <form style="text-decoration:none" class="" asp-controller="Product" asp-action="Get" asp-route-id=@item.Id>
                             <div class="card card-size-250">
                             <img class="card-img-top" src=@Url.Content(@item.ImgPath) alt="Card image"> <!--card-img-size-50-->
 
@@ -36,15 +36,16 @@
                                 <p class="card-text">Price : @item.Price</p>
                                 <p class="card-text">Description : @item.Note</p>
                             </div>
-                      <form method="post">
-                            <a style="text-decoration:none"  asp-area="" asp-controller="Admin" asp-action="DeleteProduct">Delete</a>
-                         </form>
                             </div>
-                        </a>
+                            </form>
+                            <form method="post"   asp-area="" asp-controller="Admin" asp-action="DeleteProduct" asp-route-id=@item.Id>
+                              <button type="submit" style="width:250px" class="btn btn-outline-fail" >
+                                    <i class="fa fa-remove	" aria-hidden="true"></i>
+                                    Remove
+                                </button>
+                            </form>
                     </div>
         }
-       
-
     }
 
 </div>

@@ -144,12 +144,12 @@ namespace Presentation.Controllers
             return View(res);
         }
 
-        [HttpGet]
+        [HttpPost]
         [Route("DeleteProduct")]
         public IActionResult DeleteProduct(int id) 
         {
             _productService.Delete(id);
-            return Ok();
+            return View("GetProducts");
         }
         [HttpPost]
         [Route("AddProduct")]
@@ -159,6 +159,13 @@ namespace Presentation.Controllers
             return View();
         }
 
+        [HttpPost]
+        [Route("DeleteUser")]
+        public IActionResult DeleteUser(int id) 
+        {
+            _userService.Delete(id);
+            return View("GetUsers");
+        }
       
 
     }

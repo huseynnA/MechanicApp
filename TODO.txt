@@ -5,7 +5,8 @@ FIX
 
 ADD
 1.Admin panelde products add sehifesini optimize etmek done
-2.Footer de socails 
+2.Footer de socails done
+3.Admin panelde user 
 
 REMOVE
 1.Second NAv bar done

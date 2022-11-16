@@ -26,13 +26,5 @@ namespace Presentation.Controllers
         {
             return View(new ErrorViewModel { RequestId = Activity.Current?.Id ?? HttpContext.TraceIdentifier });
         }
-
-
-        [HttpGet]
-        [Route("Facebook")]
-        public IActionResult Facebook() 
-        {
-            return Redirect("https://www.facebook.com/huseyn.aliyev.167189/");
-        }
     }
 }
