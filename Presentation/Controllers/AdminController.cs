@@ -149,7 +149,7 @@ namespace Presentation.Controllers
         public IActionResult DeleteProduct(int id) 
         {
             _productService.Delete(id);
-            return View("GetProducts");
+            return RedirectToAction("Index");
         }
         [HttpPost]
         [Route("AddProduct")]
@@ -164,9 +164,9 @@ namespace Presentation.Controllers
         public IActionResult DeleteUser(int id) 
         {
             _userService.Delete(id);
-            return View("GetUsers");
+            return RedirectToAction("Index");
         }
-      
+
 
     }
     
