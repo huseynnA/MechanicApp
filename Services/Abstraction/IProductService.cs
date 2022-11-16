@@ -16,6 +16,7 @@ namespace Services.Abstract
         public IEnumerable<CartDTO> GetCart(int userId);
 
         public void Buy(int cartId);
+       // public void DeleteProduct(int prodId);
 
         public ProductDTO CreateProduct(ProductDTO productDTO); 
     }

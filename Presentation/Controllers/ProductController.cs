@@ -130,8 +130,17 @@ namespace Presentation.Controllers
                     isSuccess = true
                 });
         }
+        [HttpPost]
+        public IActionResult Delete(PayDTO dto)
+        {
+            _productService.Buy(dto.CartId);
 
-       
-
+            return RedirectToAction("GetCart",
+                new
+                {
+                    message = "You are remove item from cart",
+                    isSuccess = true
+                });
+        }
     }
 }
