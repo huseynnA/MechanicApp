@@ -1,0 +1,11 @@
+FIX
+1.Admin panelde userler getirmek done
+2.Admin panelde products silmek
+
+
+ADD
+1.Admin panelde products add sehifesini optimize etmek done
+2.Footer de socails 
+
+REMOVE
+1.Second NAv bar done
