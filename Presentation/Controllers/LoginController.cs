@@ -36,7 +36,7 @@ namespace Presentation.Controllers
 
                 Authenticate(user);
 
-                return RedirectToAction("Index", "Home");
+                return RedirectToAction("Index", "Home",user);
             }
             catch (Exception ex)
             {
@@ -81,6 +81,8 @@ namespace Presentation.Controllers
             {
                 new Claim("Id", user.Id.ToString()),
                 new Claim("Username", user.Username),
+                new Claim("Name", user.Name),
+                new Claim("Surname", user.Surname),
             };
 
             ClaimsIdentity id = new ClaimsIdentity(claims, "ApplicationCookie");

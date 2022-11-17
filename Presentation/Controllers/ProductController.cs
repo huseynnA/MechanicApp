@@ -91,7 +91,7 @@ namespace Presentation.Controllers
                 isSuccess = false;
             }
 
-            return RedirectToAction("Get", 
+            return RedirectToAction("GetAll", 
                 new { 
                     id = dto.ProductId,
                     message = mes,

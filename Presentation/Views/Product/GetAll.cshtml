@@ -49,6 +49,25 @@
                                 <h4 class="card-title">@item.Name</h4>
                                 <p class="card-text">Price : @item.Price</p>
                                 <p class="card-text">Description : @item.Note</p>
+                                <form method="post" asp-controller="Product" asp-action="AddToCart">
+
+                                    <div class="form-outline mb-4">
+                                        <label>Count:  </label>
+                                        <input type="number" style="width:100px" value="1" name="Count" min="1" max="10" class="form-control form-control" />
+                                    </div>
+
+                                    <button type="submit" class="btn btn-outline-success">
+                                        <i class="fa fa-shopping-cart" aria-hidden="true"></i>
+                                        Add to Cart
+                                    </button>
+
+                                    <div class="form-outline mb-4">
+                                       @{ var x= @Model.Values.FirstOrDefault();
+                                       <input type="hidden" name="ProductId" value="@x.Id" class="form-control form-control" />
+                                        }
+                                    </div>
+
+                                </form>
                             </div>
                             </div>
                         </a>

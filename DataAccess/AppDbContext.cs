@@ -29,16 +29,18 @@ namespace DataAccess
 			var salt = Crypto.GenerateSalt();
 
             modelBuilder.Entity<User>().HasData(
-				new User
-				{
-					Id = 1,
-					Username = "admin",
-					Salt = salt,
-					PasswordHash = Crypto.GenerateSHA256Hash("admin001",salt),
-					CreateDate = DateTime.Now,
-				    CreateUserId = 1
-				}
-				);
+                new User
+                {
+                    Id = 1,
+                    Username = "admin",
+                    Name = "Huseyn",
+                    Surname= "Aliyev",
+                    Salt = salt,
+                    PasswordHash = Crypto.GenerateSHA256Hash("admin001", salt),
+                    CreateDate = DateTime.Now,
+                    CreateUserId = 1
+                }
+                ) ;
 
             modelBuilder.Entity<Product>().HasData(
                 new Product

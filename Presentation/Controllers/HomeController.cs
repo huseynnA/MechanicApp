@@ -1,4 +1,5 @@
-﻿using Microsoft.AspNetCore.Authorization;
+﻿using DTO;
+using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
 using Presentation.Models;
 using System.Diagnostics;
@@ -15,8 +16,10 @@ namespace Presentation.Controllers
             _logger = logger;
         }
 
-        public IActionResult Index()
+        public IActionResult Index(UserDTO user)
         {
+            ViewBag.Name = user.Name;
+            ViewBag.Surname= user.Surname;
             return View();
         }
 

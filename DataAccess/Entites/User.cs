@@ -8,6 +8,8 @@ namespace DataAccess.Entites
 {
     public class User : BaseEntity
     {
+        public string Name { get; set; }
+        public string Surname { get; set; }
         public string Username { get; set; }
         public string Salt { get; set; }
         public string PasswordHash { get; set; }

@@ -26,5 +26,8 @@ namespace DTO
         [Required]
         [MinLength(8,ErrorMessage = "Min length is 8!")]
         public string Password { get; set; }
+
+        public string Name { get; set; }
+        public string Surname { get; set; }
     }
 }
