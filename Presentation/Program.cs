@@ -1,5 +1,6 @@
 using AutoMapper;
 using DataAccess;
+using DTO;
 using Microsoft.AspNetCore.Authentication.Cookies;
 using Microsoft.EntityFrameworkCore;
 using Services;
@@ -20,6 +21,7 @@ builder.Services.AddControllersWithViews();
 builder.Services.AddScoped<IAdminService,AdminService>();
 builder.Services.AddScoped<IUserService,UserService>();
 builder.Services.AddScoped<IProductService,ProductService>();
+builder.Services.AddScoped<UserDTO>();
 
 builder.Services.AddDbContext<AppDbContext>(opt =>
             opt.UseNpgsql(builder.Configuration.GetConnectionString("DefaultConnection"),

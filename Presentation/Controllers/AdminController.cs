@@ -168,6 +168,30 @@ namespace Presentation.Controllers
         }
 
 
+        [HttpGet]
+        [Route("EditUserPage")]
+        public IActionResult EditUserPage(int id)
+        {
+            return View(id);
+        }
+
+        [HttpPost]
+        [Route("EditUser")]
+        public IActionResult EditUser(int id)
+        {
+            var res = _userService.Get(id);
+            _userService.Update(res);
+            return RedirectToAction("Index");
+        }
+
+        //[HttpPost]
+        //[Route("GetUsername")]
+        //public IActionResult GetUsername(int id)
+        //{
+        //    var ent=_userService.Get(id);
+        //    var res = ent.Name + ent.Surname;
+        //    return RedirectToAction();
+        //}
     }
     
 }

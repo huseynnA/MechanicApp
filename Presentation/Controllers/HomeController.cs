@@ -18,9 +18,9 @@ namespace Presentation.Controllers
 
         public IActionResult Index(UserDTO user)
         {
-            ViewBag.Name = user.Name;
+            ViewBag.Id = user.Id;
             ViewBag.Surname= user.Surname;
-            return View();
+            return View(user);
         }
 
 
@@ -29,5 +29,7 @@ namespace Presentation.Controllers
         {
             return View(new ErrorViewModel { RequestId = Activity.Current?.Id ?? HttpContext.TraceIdentifier });
         }
+
+      
     }
 }

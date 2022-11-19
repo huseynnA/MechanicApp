@@ -130,6 +130,34 @@ namespace Presentation.Controllers
                     isSuccess = true
                 });
         }
+
+
+
+
+        [HttpPost]
+        public IActionResult BuyAll(PayDTO dto)
+        {
+            _productService.BuyAll(dto.CartId);
+
+            return RedirectToAction("GetCart",
+                new
+                {
+                    message = "Success! You paid " + dto.Sum + "$!",
+                    isSuccess = true
+                });
+        }
+
+
+
+
+
+
+
+
+
+
+
+
         [HttpPost]
         public IActionResult Delete(PayDTO dto)
         {

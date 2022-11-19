@@ -6,8 +6,27 @@
 
     @{
     Layout = "_Layout";
-}
+    }
     
+    <head>
+        <style>
+            table{
+                width:100px;
+                margin:150px 150px;
+            }
+        table, th, td {
+    border: 1px solid white;
+    border-collapse: collapse;
+                        }
+    th, td {
+     background-color: #96D4D4;
+     text-align:center; 
+     padding:15px 15px;
+    }
+</style>
+</head>
+
+
     <div class="row justify-content-md-center">
         <div class="col col-md-auto">
             <ul class="list-group bg-white list-group-horizontal">
@@ -17,20 +36,36 @@
             </ul>
         </div>
     </div>
-<table class="row mt-1 mb-2">
+<table>
+
+     <tr>
+    <th>Name</th>
+    <th>Surname</th>
+    <th>Username</th>
+    <th><span>Configure</span></th>
+  </tr>
 
     @{
         foreach (var item in Model.Values)
         {
-            <ul>Username:
-            <li>@item.Username</li>
-            </ul>
+           
+             <tr>
+                <td><span>   @item.Name</span></td>
+                <td><span>   @item.Surname</span></td>
+                <td><span>   @item.Username</span></td>
+                <td>
               <form method="post"   asp-area="" asp-controller="Admin" asp-action="DeleteUser" asp-route-id=@item.Id>
-                 <button type="submit" style="width:250px" class="btn btn-outline-fail" >
+                 <button type="submit" style="width:75px" class="btn btn-outline-fail"  >
                                     <i class="fa fa-remove	" aria-hidden="true"></i>
-                                    Remove
                                 </button>
             </form>
+            <form method="get" asp-area="" asp-controller="Admin" asp-action="EditUserPage" asp-route-id=@item.Id>  
+            <button type="submit" style="width:75px" class="btn btn-outline-fail" >
+                                    <i class="fa fa-edit	" aria-hidden="true"></i>
+                                </button>
+            </form>
+            </td>
+            </tr>
         }
 
 

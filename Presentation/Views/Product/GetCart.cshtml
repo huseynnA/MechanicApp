@@ -2,18 +2,38 @@
     @model IEnumerable<CartDTO>;
 }
 
-
+<h1>Cart</h1>
 <div class="row mt-1 mb-2">
 
     <partial name="~/Views/Shared/Message.cshtml" />
 
     @{
-        if(Model.Count()==0)
+        if (Model.Count() == 0)
         {
             <div class="justify-content-center">
                 <p class="h2">No products added to cart!</p>
             </div>
         }
+        else if (Model.Count() > 0)
+        {
+
+            double sum = 0;
+            @foreach (var item in Model)
+            {
+                sum = sum + item.Sum;
+            }
+
+
+            <form method="post" asp-controller="Product" asp-action="BuyAll">
+                                <input type="hidden" value="@sum" name="Sum">
+                                <input type="hidden" value="@Model.FirstOrDefault().Id" name="CartId">
+                                <button type="submit" style="width:250px" class="btn btn-outline-success" >
+                                    <i class="fa fa-shopping-cart" aria-hidden="true"></i>
+                                    Finish your order
+                                </button>
+                            </form>
+        }
+
         foreach (var item in Model)
         {
 
@@ -28,16 +48,6 @@
                                 <p class="card-text">Sum : @item.Sum</p>
                                
                             </div>
-
-                            <form method="post" asp-controller="Product" asp-action="Buy">
-                                <input type="hidden" value="@item.Sum" name="Sum">
-                                <input type="hidden" value="@item.Id" name="CartId">
-                                <button type="submit" style="width:250px" class="btn btn-outline-success" >
-                                    <i class="fa fa-shopping-cart" aria-hidden="true"></i>
-                                    Buy
-                                </button>
-                            </form>
-
                             <form method="post" asp-controller="Product" asp-action="Delete">
                                 <input type="hidden" value="@item.Sum" name="Sum">
                                 <input type="hidden" value="@item.Id" name="CartId">

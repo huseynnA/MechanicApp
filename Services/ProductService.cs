@@ -4,11 +4,6 @@ using DataAccess.Entites;
 using DTO;
 using Microsoft.EntityFrameworkCore;
 using Services.Abstract;
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 
 namespace Services
 {
@@ -28,15 +23,50 @@ namespace Services
             _db.SaveChanges();
         }
 
-        public void AddToCart(CartDTO dto) 
+        public void BuyAll(int cartId)
+        {
+            foreach (var item in _db.Carts)
+            {
+                _db.Carts.Remove(item);
+            }
+            _db.SaveChanges();
+        }
+
+
+
+
+            //////////////////////////
+            //dynamic cart;
+            //while(cartId > 0)
+            //{
+            //    cart = _db.Carts.Find(cartId);
+
+            //    try
+            //    {
+            //        _db.Carts.Remove(cart);
+            //        _db.SaveChanges();
+            //    }
+            //    catch 
+            //    {
+
+            //    }
+            //    finally
+            //    {
+            //        cartId--;
+            //    }
+            //}
+
+        
+
+        public void AddToCart(CartDTO dto)
         {
             var user = _db.Users.Find(dto.UserId);
-            
+
             if (user == null)
                 throw new Exception("User not found!");
 
             var ent = _mapper.Map<Cart>(dto);
-            
+
             user.Cart.Add(ent);
 
             _db.SaveChanges();
@@ -60,7 +90,7 @@ namespace Services
             return res;
         }
 
-        public IEnumerable<ProductDTO> GetFilter(int page = 1, int pageSize = 16, ProductSortOrder order = ProductSortOrder.NameAsc, string search = null) 
+        public IEnumerable<ProductDTO> GetFilter(int page = 1, int pageSize = 16, ProductSortOrder order = ProductSortOrder.NameAsc, string search = null)
         {
             //doing it in code, but need in db
             var res = Get();
@@ -89,7 +119,7 @@ namespace Services
 
         }
 
-        
+
 
     }
 }
