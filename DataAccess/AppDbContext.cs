@@ -14,10 +14,7 @@ namespace DataAccess
 {
     public class AppDbContext : DbContext
     {
-		public DbSet<User> Users { get; set; }
-		public DbSet<Product> Products { get; set; }
-		public DbSet<Cart> Carts { get; set; }
-		public DbSet<Admin> Admins{ get; set; }
+	
 
 		public AppDbContext(DbContextOptions<AppDbContext> options) : base(options)
 		{
@@ -46,10 +43,10 @@ namespace DataAccess
                 new Product
                 {
                     Id = 1,
-					Name = "Movie",
+					Name = "Shell",
 					Price = 5,
-                    ImgPath = "~/img/pulp_fict.jpg",
-                    Note = "Description",
+                    ImgPath = "https://media.carparts4less.co.uk/images/products/200x200/521772251.jpg",
+                    Note = "Shell Helix HX7 Engine Oil - 10W-40 - 5Ltr",
                     CreateDate = DateTime.Now,
                     CreateUserId = 1
                 });
@@ -58,13 +55,17 @@ namespace DataAccess
                 new Product
                 {
                     Id = 2,
-                    Name = "Test",
+                    Name = "Triple",
                     Price = 15,
-                    ImgPath = "~/img/pulp_fict.jpg",
-                    Note = "Description",
+                    ImgPath = "https://media.carparts4less.co.uk/images/products/200x200/521776011.jpg?v=11.03",
+                    Note = "Shell Helix HX7 Engine Oil - 10W-40 - 5Ltr",
                     CreateDate = DateTime.Now,
                     CreateUserId = 1
                 });
         }
-	}
+        public DbSet<User> Users { get; set; }
+        public DbSet<Product> Products { get; set; }
+        public DbSet<Cart> Carts { get; set; }
+        public DbSet<Admin> Admins { get; set; }
+    }
 }

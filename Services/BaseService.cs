@@ -64,7 +64,7 @@ namespace Services
         {
             var ent = _mapper.Map<TReq, TEntity>(model);
             ent.UpdateDate = DateTime.Now;
-
+            
             _dbSet.Update(ent);
             _db.SaveChanges();
             var res = _mapper.Map<TEntity, TRes>(ent);

@@ -10,10 +10,10 @@ namespace Presentation.Controllers
         private readonly IProductService _productService;
         private readonly IUserService _userService;
 
-        public AdminController(IAdminService adminService,IProductService productService,IUserService userService)
+        public AdminController(IAdminService adminService, IProductService productService, IUserService userService)
         {
             _adminService = adminService;
-            _productService= productService;
+            _productService = productService;
             _userService = userService;
         }
 
@@ -47,17 +47,17 @@ namespace Presentation.Controllers
 
         [HttpGet]
         [Route("AddProduct")]
-        public IActionResult AddProduct() 
+        public IActionResult AddProduct()
         {
             return View();
         }
 
 
-      
+
 
         [HttpGet]
         [Route("GetProducts")]
-        public IActionResult GetProducts(int page = 1, int pageSize = 16, ProductSortOrder order = ProductSortOrder.NameAsc, string search = null) 
+        public IActionResult GetProducts(int page = 1, int pageSize = 16, ProductSortOrder order = ProductSortOrder.NameAsc, string search = null)
         {
             if (!string.IsNullOrEmpty(search))
                 ViewBag.Search = search;
@@ -91,7 +91,7 @@ namespace Presentation.Controllers
 
         [HttpGet]
         [Route("GetUsers")]
-        public IActionResult GetUsers(int page = 1, int pageSize = 16, ProductSortOrder order = ProductSortOrder.NameAsc, string search = null) 
+        public IActionResult GetUsers(int page = 1, int pageSize = 16, ProductSortOrder order = ProductSortOrder.NameAsc, string search = null)
         {
             if (!string.IsNullOrEmpty(search))
                 ViewBag.Search = search;
@@ -146,14 +146,14 @@ namespace Presentation.Controllers
 
         [HttpPost]
         [Route("DeleteProduct")]
-        public IActionResult DeleteProduct(int id) 
+        public IActionResult DeleteProduct(int id)
         {
             _productService.Delete(id);
             return RedirectToAction("Index");
         }
         [HttpPost]
         [Route("AddProduct")]
-        public IActionResult AddProduct(ProductDTO productDTO) 
+        public IActionResult AddProduct(ProductDTO productDTO)
         {
             var res = _productService.Create(productDTO);
             return View();
@@ -161,37 +161,13 @@ namespace Presentation.Controllers
 
         [HttpPost]
         [Route("DeleteUser")]
-        public IActionResult DeleteUser(int id) 
+        public IActionResult DeleteUser(int id)
         {
             _userService.Delete(id);
             return RedirectToAction("Index");
         }
 
 
-        [HttpGet]
-        [Route("EditUserPage")]
-        public IActionResult EditUserPage(int id)
-        {
-            return View(id);
-        }
 
-        [HttpPost]
-        [Route("EditUser")]
-        public IActionResult EditUser(int id)
-        {
-            var res = _userService.Get(id);
-            _userService.Update(res);
-            return RedirectToAction("Index");
-        }
-
-        //[HttpPost]
-        //[Route("GetUsername")]
-        //public IActionResult GetUsername(int id)
-        //{
-        //    var ent=_userService.Get(id);
-        //    var res = ent.Name + ent.Surname;
-        //    return RedirectToAction();
-        //}
     }
-    
 }
