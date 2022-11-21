@@ -3,6 +3,10 @@
     ViewData["Title"] = "Home Page";
 }
 
+@{
+    Layout = "_Layout";
+}
+
 
 <!DOCTYPE html>
 <html lang="en">
@@ -43,7 +47,15 @@
       </div>*@
       <!-- end loader -->
       <!-- header -->
+
+
+
+    
+
+
+
       <header>
+
          <!-- header inner -->
          <div class="header" style="background:transparent;">
        
@@ -414,7 +426,8 @@
                <div class="container">
                   <div class="row">
                      <div class="col-md-12">
-                        <p>Copyright 2019 All Right Reserved By</p>
+                        <p>Copyright 2019 All Right Reserved By @ViewBag.v @ViewBag.Id </p>
+                        <h1></h1>
                      </div>
                   </div>
                </div>
@@ -432,3 +445,8 @@
       <script src="~/js/custom.js"></script>
    </body>
 </html>
+
+
+@TempData["Name"] gb
+
+

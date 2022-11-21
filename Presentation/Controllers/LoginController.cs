@@ -35,9 +35,7 @@ namespace Presentation.Controllers
                 user = _userService.Login(user);
 
                 Authenticate(user);
-                ViewBag.Name = user.Name;
-                ViewBag.Surname = user.Surname;
-                return RedirectToAction("Index", "Home",user,ViewBag.Name);
+                return RedirectToAction("Index", "Home",user);
             }
             catch (Exception ex)
             {

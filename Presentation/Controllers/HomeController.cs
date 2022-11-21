@@ -1,8 +1,14 @@
-﻿using DTO;
+﻿using DataAccess.Entites;
+using DTO;
 using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
 using Presentation.Models;
+using Services;
+using Services.Abstract;
+using System.Data.Entity;
 using System.Diagnostics;
+using System.Security.Claims;
+//using System.Web.Mvc;
 
 namespace Presentation.Controllers
 {
@@ -16,11 +22,9 @@ namespace Presentation.Controllers
             _logger = logger;
         }
 
-        public IActionResult Index(UserDTO user)
+        public IActionResult Index()
         {
-            ViewBag.Id = user.Id;
-            ViewBag.Surname= user.Surname;
-            return View(user);
+            return View();
         }
 
 
@@ -29,7 +33,5 @@ namespace Presentation.Controllers
         {
             return View(new ErrorViewModel { RequestId = Activity.Current?.Id ?? HttpContext.TraceIdentifier });
         }
-
-      
     }
 }
