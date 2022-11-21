@@ -81,18 +81,5 @@ namespace Services
 
             return users;
         }
-
-
-
-
-
-
-        public void Tst(UserDTO user) 
-        {
-            var res = _dbSet.Where(x => x.Name == user.Name);
-        }
-
-
-
     }
 }

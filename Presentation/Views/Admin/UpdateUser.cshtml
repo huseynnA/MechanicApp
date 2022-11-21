@@ -1,0 +1,48 @@
+﻿@{
+    Layout = "_Layout";
+}
+
+@model UserDTO
+
+<form method="post">
+    <h3 class="mb-5">Update</h3>
+    
+    <div class="form-outline mb-4">
+        <input type="hidden" class="form-control form-control-lg " name="Id" value="@Model.Id" />
+    </div>
+
+     <div class="form-outline mb-4">
+        <input type="hidden" class="form-control form-control-lg " name="Password" value="@Model.Password" />
+    </div>
+
+
+    <div class="form-outline mb-4">
+        <input type="hidden" class="form-control form-control-lg " name="PasswordHash" value="@Model.PasswordHash" />
+    </div>
+
+    <div class="form-outline mb-4">
+        <input type="hidden" class="form-control form-control-lg " name="Salt" value="@Model.Salt" />
+    </div>
+
+    <div class="form-outline mb-4">
+        <input type="text" class="form-control form-control-lg" name="Name" value="@Model.Name" />
+    </div>
+
+    <div class="form-outline mb-4">
+        <input type="text" class="form-control form-control-lg" name="Surname"  value="@Model.Surname"/>
+    </div>
+
+    <div class="form-outline mb-4">
+        <input type="text" class="form-control form-control-lg" name="Username"  value="@Model.Username"/>
+    </div>
+
+    
+    <button class="btn btn-primary btn-lg btn-block mb-4" type="submit"
+            asp-controller="Admin" asp-action="UpdateUserDTO">
+    Update
+    </button>
+
+    <partial name="~/Views/Shared/Message.cshtml" />
+
+
+</form>

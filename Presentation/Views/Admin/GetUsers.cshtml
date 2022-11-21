@@ -1,5 +1,4 @@
-﻿admin
-@using DTO
+﻿@using DTO
 @model PagedResponseDTO<UserDTO>
 
 
@@ -60,14 +59,13 @@
                                 </button>
             </form>
            
-            <button type="submit" style="width:75px" class="btn btn-outline-fail" >
+            <a style="width:75px" class="btn btn-outline-fail" asp-controller="Admin" asp-action="UpdateUser" asp-route-id=@item.Id >
                                     <i class="fa fa-edit	" aria-hidden="true"></i>
-                                </button>
-            
+            </a  >
             </td>
             </tr>
         }
-
+        
 
     }
 

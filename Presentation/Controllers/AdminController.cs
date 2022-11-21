@@ -168,6 +168,20 @@ namespace Presentation.Controllers
         }
 
 
+        [HttpGet("{id}")]
+        public IActionResult UpdateUser(int id)
+        {
+            var res = _userService.Get(id);
+            return View(res);
+        }
+
+        [HttpPost]
+        public IActionResult UpdateUserDTO(UserDTO user)
+        {
+            var res = _userService.Update(user);
+            return View("Index", res);
+        }
+
 
     }
 }

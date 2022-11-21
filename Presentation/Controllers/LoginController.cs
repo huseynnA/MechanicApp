@@ -82,6 +82,7 @@ namespace Presentation.Controllers
                 new Claim("Username", user.Username),
                 new Claim("Name", user.Name),
                 new Claim("Surname", user.Surname),
+                new Claim(ClaimTypes.Surname, user.Surname),
             };
 
             ClaimsIdentity id = new ClaimsIdentity(claims, "ApplicationCookie");
