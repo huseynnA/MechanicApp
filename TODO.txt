@@ -9,7 +9,7 @@ ADD
 2.Footer de socails done
 3.Admin panelde user done
 4.Some product
-5.User fullname gelsin ekrana -
+5.User fullname gelsin ekrana -done
 6.Mehsul almaq tek sebet mentiqi done
 REMOVE
 1.Second NAv bar done
