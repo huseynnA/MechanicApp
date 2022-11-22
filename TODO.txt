@@ -2,8 +2,8 @@ FIX
 1.Admin panelde userler getirmek done
 2.Admin panelde products silmek done
 3.Add to cart product sehifesinden olsun done
-4.Admin panelde user list optimize etmek-
-4.2 User edit fix etmek-
+4.Admin panelde user list optimize etmek-done
+4.2 User edit fix etmek-done
 ADD
 1.Admin panelde products add sehifesini optimize etmek done
 2.Footer de socails done

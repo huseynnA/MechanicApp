@@ -41,7 +41,7 @@
                     @{
                         var name = User.Claims.Where(x => x.Type == "Name").Select(x => x.Value).FirstOrDefault();
                         var surname= User.Claims.Where(x => x.Type == ClaimTypes.Surname).Select(x => x.Value).FirstOrDefault();
-                        var surname2 = User.FindFirst(x => x.Type == ClaimTypes.Surname).Value; // daha qisa
+                       // var surname2 = User.FindFirst(x => x.Type == ClaimTypes.Surname).Value; // daha qisa
 
                           <a style="color:aliceblue">Hello Mr: @name @surname</a>
                       }
