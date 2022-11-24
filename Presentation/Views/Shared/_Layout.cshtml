@@ -37,15 +37,15 @@
                             <a class="nav-link text-light" asp-area="" asp-controller="Product" asp-action="GetCart">Cart</a>
                         </li>
                     </ul>
-            
+            <span>
                     @{
                         var name = User.Claims.Where(x => x.Type == "Name").Select(x => x.Value).FirstOrDefault();
                         var surname= User.Claims.Where(x => x.Type == ClaimTypes.Surname).Select(x => x.Value).FirstOrDefault();
                        // var surname2 = User.FindFirst(x => x.Type == ClaimTypes.Surname).Value; // daha qisa
 
-                          <a style="color:aliceblue">Hello Mr: @name @surname</a>
+                          <a style="font-size:20px;color:white"><i class="far fa-grin	" style='font-size:20px;color:white'></i> @name @surname</a>
                       }
-
+            </span>
                     <a class="nav-link text-light btn btn-danger fa fa-user-circle" asp-area="" asp-controller="Login" asp-action="SignOut">Sign Out</a>
 
                 </div>

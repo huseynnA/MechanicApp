@@ -19,7 +19,7 @@ namespace Presentation.Controllers
 
         public IActionResult Index()
         {
-            return View();
+          return View();
         }
 
         [HttpGet]
@@ -181,7 +181,5 @@ namespace Presentation.Controllers
             var res = _userService.Update(user);
             return View("Index", res);
         }
-
-
     }
 }
