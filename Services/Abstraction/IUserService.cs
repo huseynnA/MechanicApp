@@ -13,5 +13,6 @@ namespace Services.Abstract
         public UserDTO Login(UserDTO user);
         public IEnumerable<UserDTO> GetUserList();
         public IEnumerable<UserDTO> GetFilter(int page = 1, int pageSize = 16, ProductSortOrder order = ProductSortOrder.NameAsc, string search = null);
+        public int GetCartCount(int userId);
     }
 }

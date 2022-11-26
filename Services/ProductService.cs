@@ -34,29 +34,41 @@ namespace Services
 
 
 
+        public int ProductCount(int cartId)
+        {
+            int count = 0;
+            foreach (var item in _db.Carts)
+            {
+                item.Count = 1;
+                count += item.Count;
+            }
+            return count;
+        }
 
-            //////////////////////////
-            //dynamic cart;
-            //while(cartId > 0)
-            //{
-            //    cart = _db.Carts.Find(cartId);
 
-            //    try
-            //    {
-            //        _db.Carts.Remove(cart);
-            //        _db.SaveChanges();
-            //    }
-            //    catch 
-            //    {
 
-            //    }
-            //    finally
-            //    {
-            //        cartId--;
-            //    }
-            //}
+        //////////////////////////
+        //dynamic cart;
+        //while(cartId > 0)
+        //{
+        //    cart = _db.Carts.Find(cartId);
 
-        
+        //    try
+        //    {
+        //        _db.Carts.Remove(cart);
+        //        _db.SaveChanges();
+        //    }
+        //    catch 
+        //    {
+
+        //    }
+        //    finally
+        //    {
+        //        cartId--;
+        //    }
+        //}
+
+
 
         public void AddToCart(CartDTO dto)
         {
@@ -118,7 +130,6 @@ namespace Services
             return ent;
 
         }
-
 
 
     }

@@ -1,7 +1,9 @@
 ﻿@using DTO
 @using System.Security.Claims
+@using Services.Abstract 
 @inject UserDTO user
 
+@inject IUserService _userService
 
 <!DOCTYPE html>
 <html lang="en">
@@ -34,7 +36,9 @@
                             <a class="nav-link text-light" asp-area="" asp-controller="Product" asp-action="GetAll">Products</a>
                         </li>
                         <li class="nav-item">
-                            <a class="nav-link text-light" asp-area="" asp-controller="Product" asp-action="GetCart">Cart</a>
+                            <a class="nav-link text-light" asp-area="" asp-controller="Product" asp-action="GetCart">Cart
+                            @_userService.GetCartCount(user.Id)    
+                            </a>
                         </li>
                     </ul>
             <span>

@@ -19,6 +19,8 @@ namespace Services.Abstract
         public void BuyAll(int cartId);
        // public void DeleteProduct(int prodId);
 
-        public ProductDTO CreateProduct(ProductDTO productDTO); 
+        public ProductDTO CreateProduct(ProductDTO productDTO);
+        public int ProductCount(int cartId);
+
     }
 }

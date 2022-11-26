@@ -10,9 +10,10 @@ namespace Services
     public class UserService : BaseService<UserDTO, User, UserDTO>, IUserService
     {
 
-        public UserService(AppDbContext db, IMapper mapper) : base(db, mapper)
+        private readonly IProductService _productService;
+        public UserService(AppDbContext db, IMapper mapper,IProductService productService) : base(db, mapper)
         {
-
+            _productService = productService;
         }
 
         public UserDTO Login(UserDTO model)
@@ -80,6 +81,14 @@ namespace Services
             var users = res.Skip((page - 1) * pageSize).Take(pageSize).ToList();
 
             return users;
+        }
+
+        public int GetCartCount(int userId)
+        {
+
+
+            var res = _productService.ProductCount(userId);
+            return res;
         }
     }
 }
