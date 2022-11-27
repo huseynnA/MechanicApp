@@ -20,7 +20,7 @@
     <header>
         <nav class="navbar navbar-expand-sm navbar-toggleable-sm navbar-dark bg-dark border-bottom box-shadow mb-3">
             <div class="container-fluid">
-                <a class="navbar-brand" asp-area="" asp-controller="Home" asp-action="Index">Presentation</a>
+                <a class="navbar-brand" asp-area="" asp-controller="Home" asp-action="Index"><b>Presentation</b></a>
 
 
                 <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target=".navbar-collapse" aria-controls="navbarSupportedContent"
@@ -30,14 +30,16 @@
                 <div class="navbar-collapse collapse d-sm-inline-flex justify-content-between">
                     <ul class="navbar-nav flex-grow-1">
                         <li class="nav-item">
-                            <a class="nav-link text-light" asp-area="" asp-controller="Home" asp-action="Index">Home</a>
+                            <a class="nav-link text-light" asp-area="" asp-controller="Home" asp-action="Index"><b>Home</b></a>
                         </li>
                         <li class="nav-item">
-                            <a class="nav-link text-light" asp-area="" asp-controller="Product" asp-action="GetAll">Products</a>
+                            <a class="nav-link text-light" asp-area="" asp-controller="Product" asp-action="GetAll"><b>Products</b></a>
                         </li>
                         <li class="nav-item">
-                            <a class="nav-link text-light" asp-area="" asp-controller="Product" asp-action="GetCart">Cart
-                            @_userService.GetCartCount(user.Id)    
+                            <a class="nav-link text-light" asp-area="" asp-controller="Product" asp-action="GetCart"><b><i class="fas fa-shopping-cart" style="font-size:17px;"></i></b>
+                          <span class="badge bg-secondary">
+                                @_userService.GetCartCount(user.Id)    
+                            </span>
                             </a>
                         </li>
                     </ul>
@@ -47,10 +49,10 @@
                         var surname= User.Claims.Where(x => x.Type == ClaimTypes.Surname).Select(x => x.Value).FirstOrDefault();
                        // var surname2 = User.FindFirst(x => x.Type == ClaimTypes.Surname).Value; // daha qisa
 
-                          <a style="font-size:20px;color:white"><i class="far fa-grin	" style='font-size:20px;color:white'></i> @name @surname</a>
+                          <a style="font-size:20px;color:white"><i class="fas fa-user"></i> @name @surname</a>
                       }
             </span>
-                    <a class="nav-link text-light btn btn-danger fa fa-user-circle" asp-area="" asp-controller="Login" asp-action="SignOut">Sign Out</a>
+                    <a class="nav-link text-light btn btn-danger fa fa-user-circle" asp-area="" asp-controller="Login" asp-action="SignOut" style="margin-left:5px;">Sign Out</a>
 
                 </div>
             </div>
