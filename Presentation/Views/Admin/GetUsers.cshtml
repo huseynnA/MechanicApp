@@ -22,6 +22,8 @@
                                     <th><span>Created</span></th>
                                     <th class="text-center"><span>Status</span></th>
                                     <th><span>Username</span></th>
+                                    <th><span><a class="text-decoration-none" asp-action="GetUsers" asp-route-order="@ViewBag.NameSort">Name</a></span></th>
+
                                     <th>&nbsp;</th>
                                 </tr>
                             </thead>
@@ -67,5 +69,5 @@
     </div>
 </div>
 
-<a class="text-decoration-none" asp-action="GetUsers" asp-route-order="@ViewBag.NameSort">Name</a>
+@*<a class="text-decoration-none" asp-action="GetUsers" asp-route-order="@ViewBag.NameSort">Name</a>*@
 
