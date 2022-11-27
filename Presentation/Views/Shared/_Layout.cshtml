@@ -45,11 +45,13 @@
                     </ul>
             <span>
                     @{
-                        var name = User.Claims.Where(x => x.Type == "Name").Select(x => x.Value).FirstOrDefault();
-                        var surname= User.Claims.Where(x => x.Type == ClaimTypes.Surname).Select(x => x.Value).FirstOrDefault();
-                       // var surname2 = User.FindFirst(x => x.Type == ClaimTypes.Surname).Value; // daha qisa
+                            var name = User.Claims.Where(x => x.Type == "Name").Select(x => x.Value).FirstOrDefault();
+                            var surname= User.Claims.Where(x => x.Type == ClaimTypes.Surname).Select(x => x.Value).FirstOrDefault();
+                            // var surname2 = User.FindFirst(x => x.Type == ClaimTypes.Surname).Value; // daha qisa
 
-                          <a style="font-size:20px;color:white"><i class="fas fa-user"></i> @name @surname</a>
+                            string nameS = char.ToUpper(name[0]) + name.Substring(1);
+                            string surnameS= char.ToUpper(surname[0]) + surname.Substring(1);
+                            <a style="font-size:20px;color:white"><i class="fas fa-user"></i> @nameS @surnameS</a>
                       }
             </span>
                     <a class="nav-link text-light btn btn-danger fa fa-user-circle" asp-area="" asp-controller="Login" asp-action="SignOut" style="margin-left:5px;">Sign Out</a>
@@ -66,11 +68,7 @@
         </main>
     </div>
 
-    @*<footer class="border-top footer text-muted bg-dark" style="margin-top:-300px;">
-        <div class="container text-light">
-            &copy; 2022 - Presentation
-        </div>
-    </footer>*@
+   
     <script src="~/lib/jquery/dist/jquery.min.js"></script>
     <script src="~/lib/bootstrap/dist/js/bootstrap.bundle.min.js"></script>
     <script src="~/js/site.js" asp-append-version="true"></script>
