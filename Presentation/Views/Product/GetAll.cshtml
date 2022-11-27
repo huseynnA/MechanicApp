@@ -43,7 +43,7 @@
         {
 
                     <div class="col-3 my-4" >
-                        <a style="text-decoration:none" class="" asp-controller="Product" asp-action="Get" asp-route-id=@item.Id>
+                        <p style="text-decoration:none" class="" asp-controller="Product" asp-action="Get" asp-route-id=@item.Id>
                             <div class="card card-size-250">
                             <img class="card-img-top" src=@Url.Content(@item.ImgPath) alt="Card image"> <!--card-img-size-50-->
 
@@ -72,7 +72,7 @@
                                 </form>
                             </div>
                             </div>
-                        </a>
+                        </p>
                     </div>
         }
        
