@@ -1,32 +1,79 @@
-﻿admin
-@using DTO
+﻿@using DTO
 @model PagedResponseDTO<ProductDTO>
 
 
     @{
     Layout = "_Layout";
 }
-    
+ 
+<style>
 
-    <div class="row justify-content-md-center">
-        <div class="col col-md-auto">
-            <ul class="list-group bg-white list-group-horizontal">
-            <li class="list-group-item list-group-item-secondary">
-                <a class="text-decoration-none" asp-action="GetProducts" asp-route-order="@ViewBag.NameSort">Name</a>
-            </li>
-            <li class="list-group-item list-group-item-secondary">
-                <a class="text-decoration-none" asp-action="GetProducts" asp-route-order="@ViewBag.PriceSort">Price</a>
-            </li>
-            </ul>
-        </div>
-    </div>
+    .dropbtn {
+  background-color: #04AA6D;
+  color: white;
+  padding: 16px;
+  font-size: 16px;
+  border: none;
+}
+
+.dropdown {
+  position: relative;
+  display: inline-block;
+}
+
+.dropdown-content {
+  display: none;
+  position: absolute;
+  background-color: #f1f1f1;
+  min-width: 160px;
+  box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+  z-index: 1;
+}
+
+.dropdown-content a {
+  color: black;
+  padding: 12px 16px;
+  text-decoration: none;
+  display: block;
+}
+
+.dropdown-content a:hover {background-color: #ddd;}
+
+.dropdown:hover .dropdown-content {display: block;}
+
+.dropdown:hover .dropbtn {background-color: #3e8e41;}
+
+
+
+            </style>
+
+
+
+
+
+
+            <h1 style="text-align:center;">Manage Products</h1>
+
+
+
+
+
+
+<div class="dropdown justify-content-md-center" style="float:none; left:90px;">
+  <button class="dropbtn">Dropdown</button>
+  <div class="dropdown-content">
+<a class="text-decoration-none" asp-action="GetProducts" asp-route-order="@ViewBag.NameSort">Name</a>
+<a class="text-decoration-none" asp-action="GetProducts" asp-route-order="@ViewBag.PriceSort">Price</a>
+</div>
+</div>
+
 <div class="row mt-1 mb-2">
 
     @{
         foreach (var item in Model.Values)
         {
 
-                    <div class="col-3 my-4" >
+                    <div class="col-3 my-4" style="margin-left:90px;" >
                         <form style="text-decoration:none" class="" asp-controller="Product" asp-action="Get" asp-route-id=@item.Id>
                             <div class="card card-size-250">
                             <img class="card-img-top" src=@Url.Content(@item.ImgPath) alt="Card image"> <!--card-img-size-50-->
@@ -50,7 +97,7 @@
 
 </div>
 
- <button class="btn btn-primary btn-lg btn-block mb-4" >
+ <button class="btn btn-primary btn-lg btn-block mb-4" style="float:none; left:90px;">
  <a class="nav-link text-light" asp-area="" asp-controller="Admin" asp-action="AddProduct">
  AddProduct
  </a>
